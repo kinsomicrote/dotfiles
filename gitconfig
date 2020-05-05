@@ -1,0 +1,7 @@
+[color]
+	ui = true
+[user]
+	name = kinsomicrote
+	email = kinsomicrote.inc@gmail.com
+[core]
+	excludesfile = /Users/jioke/.gitignore_global
