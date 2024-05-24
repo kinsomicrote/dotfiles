@@ -1,0 +1,23 @@
+command_timeout = 10000
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+[cmd_duration]
+min_time = 4
+show_milliseconds = false
+disabled = false
+format = " 🕙 $duration($style) "
+style = "bold italic #87A752"
+
+[[battery.display]] # 'bold red' style and discharging_symbol when capacity is between 0% and 10%
+threshold = 10
+style = 'bold red'
+
+[[battery.display]] # 'bold yellow' style and 💦 symbol when capacity is between 10% and 30%
+threshold = 30
+style = 'bold yellow'
+discharging_symbol = '💦 '
+
+[ruby]
+symbol = '🔺 '
