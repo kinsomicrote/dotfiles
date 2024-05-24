@@ -3,7 +3,7 @@ return {
     'Exafunction/codeium.vim',
     config = function()
       vim.g.codeium_disable_bindings = 1
-      -- vim.g.codeium_filetypes = { TelescopePrompt = false }
+      vim.g.codeium_filetypes = { TelescopePrompt = false }
 
       vim.keymap.set('i', '<C-a>', function()
         return vim.fn['codeium#Accept']()
