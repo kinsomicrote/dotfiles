@@ -17,6 +17,9 @@ return {
       vim.keymap.set('i', '<C-]>', function()
         return vim.fn['codeium#Clear']()
       end, { expr = true })
+      vim.keymap.set('i', '<C-c>', function()
+        return vim.fn['codeium#Chat']()
+      end, { expr = true })
     end,
   },
 }
