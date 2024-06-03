@@ -79,4 +79,6 @@ config.keys = {
      { key = 'v', mods = 'CTRL|SHIFT',  action = act.PasteFrom('Clipboard') },
 }
 
+-- config.default_prog = { '/Users/jioke/.cargo/bin/zellij', '-l', 'welcome' }
+
 return config
