@@ -15,6 +15,12 @@ return {
       ["lua"] = { "stylua" },
       ["ruby"] = { "standardrb" },
       ["erb"] = { "erb-formatter" },
+      ["env"] = {},
+    },
+    filetype_detect = {
+      ["env"] = function(bufnr)
+        return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(bufnr), ":e") == "env"
+      end,
     },
   },
 }

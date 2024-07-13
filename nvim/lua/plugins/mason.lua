@@ -3,6 +3,9 @@ return {
   opts = {
     ensure_installed = {
       "biome",
+      "eslint_d",
+      "solargraph",
+      -- "rubocop",
       "typescript-language-server",
       "html-lsp",
       -- "sorbet",

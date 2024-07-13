@@ -12,3 +12,6 @@ local opt = vim.opt
 opt.clipboard = "unnamedplus"
 opt.spell = true
 opt.swapfile = false
+opt.inccommand = "split"
+
+vim.api.nvim_set_hl(0, "CmpItemKindCody", { fg = "Red" })

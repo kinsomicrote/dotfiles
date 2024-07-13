@@ -1,4 +1,3 @@
 return {
-  "RRethy/nvim-treesitter-endwise",
-  lazy = false,
+  { "RRethy/nvim-treesitter-endwise", event = "InsertEnter" },
 }

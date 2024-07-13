@@ -5,29 +5,38 @@ return {
     format_notify = true,
     inlay_hints = { enabled = true },
     servers = {
-      -- solargraph = {
-      --   root_dir = function(fname)
-      --     return require("lspconfig").util.root_pattern("Gemfile", ".git")(fname) or vim.fn.getcwd()
-      --   end,
-      --   cmd = { os.getenv("HOME") .. "/.asdf/shims/solargraph", "stdio" },
-      -- },
       standardrb = {
         cmd = { os.getenv("HOME") .. "/.asdf/shims/standardrb", "--lsp" },
       },
       ruby_lsp = {
-        cmd = { os.getenv("HOME") .. "/.asdf/shims/ruby-lsp" },
+        -- cmd = { os.getenv("HOME") .. "/.asdf/shims/ruby-lsp" },
+        settings = {
+          rubyLsp = {
+            inlay_hints = {
+              enabled = true,
+            },
+          },
+        },
       },
-      -- rubocop = {
-      --   cmd = { "bundle", "exec", "rubocop", "--lsp" },
-      --   root_dir = lspconfig.util.root_pattern("Gemfile", ".git", "."),
-      -- },
+      solargraph = {
+        -- autostart = false,
+        formatting = false,
+        diagnostics = false,
+        settings = {
+          solargraph = {
+            diagnostics = false,
+            formatting = false,
+            useBundler = false,
+            commandPath = "",
+            config = {
+              disabled = { "rubocop" },
+            },
+            inlay_hints = {
+              enabled = true,
+            },
+          },
+        },
+      },
     },
-    -- settings = {
-    --   standardrb = {
-    --     autoformat = true,
-    --     formatting = true,
-    --     format = true,
-    --   },
-    -- },
   },
 }
