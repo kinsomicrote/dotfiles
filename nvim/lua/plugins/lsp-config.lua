@@ -5,38 +5,23 @@ return {
     format_notify = true,
     inlay_hints = { enabled = true },
     servers = {
+      -- Ruby LSP configuration
+      ruby_ls = {
+        filetypes = { "ruby", "eruby", "erb" }, -- Explicitly set file types
+      },
+      -- Keep other server configurations as needed
       standardrb = {
         cmd = { os.getenv("HOME") .. "/.asdf/shims/standardrb", "--lsp" },
       },
-      ruby_lsp = {
-        -- cmd = { os.getenv("HOME") .. "/.asdf/shims/ruby-lsp" },
-        settings = {
-          rubyLsp = {
-            inlay_hints = {
-              enabled = true,
-            },
-          },
-        },
-      },
-      solargraph = {
-        -- autostart = false,
-        formatting = false,
-        diagnostics = false,
-        settings = {
-          solargraph = {
-            diagnostics = false,
-            formatting = false,
-            useBundler = false,
-            commandPath = "",
-            config = {
-              disabled = { "rubocop" },
-            },
-            inlay_hints = {
-              enabled = true,
-            },
-          },
-        },
+      html = {
+        filetypes = { "html", "eruby" },
       },
     },
+  },
+  setup = {
+    ruby_ls = function(_, opts)
+      local ruby_lsp = require("lspconfig")["ruby_ls"]
+      ruby_lsp.setup(vim.tbl_extend("force", ruby_lsp.document_config.default_config, opts))
+    end,
   },
 }

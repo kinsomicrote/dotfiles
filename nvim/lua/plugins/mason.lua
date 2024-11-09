@@ -4,11 +4,8 @@ return {
     ensure_installed = {
       "biome",
       "eslint_d",
-      "solargraph",
-      -- "rubocop",
       "typescript-language-server",
       "html-lsp",
-      -- "sorbet",
       "css-lsp",
       "tailwindcss-language-server",
       "lua-language-server",
@@ -21,6 +18,7 @@ return {
       "stylua",
       "erb-lint",
       "stimulus-language-server",
+      "htmlhint",
     },
   },
 }
